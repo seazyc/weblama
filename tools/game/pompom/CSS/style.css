@@ -1,0 +1,110 @@
+h1 {
+    font-size: 60px;
+    text-align: center;
+    font-family: Arial;
+    margin: 10px;
+}
+
+h1 img {
+    margin: 10px auto;
+}
+
+h2 {
+    font-size: 60px;
+    text-align: center;
+    font-family: Arial;
+    margin: 10px;
+}
+
+.container {
+    width: 600px;
+    margin: auto;
+    cursor: url(../img/cursor/cursor1.png), url("../img/cursor/cursor1.png"), auto;
+}
+
+.container:active {
+    cursor: url(../img/cursor/cursor2.png), url(../img/cursor/cursor2.cur), auto;
+}
+
+
+.tanah {
+    width: 200px;
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    z-index: 1;
+}
+
+.tanah::after {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 70px;
+    background: url(../img/tanah.png) bottom center no-repeat;
+    background-size: 80%;
+    position: absolute;
+    bottom: -10%;
+}
+
+.pompom {
+    width: 100%;
+    height: 0%;
+    background: url(../img/pompom.png) bottom center no-repeat;
+    background-size: 40%;
+    position: absolute;
+    top: 100px;
+    transition: top 0.3s;
+    z-index: 0;
+}
+
+.pompom-punch {
+    background: url(../img/pusing.png) bottom center no-repeat;
+    background-size: 40%;
+}
+
+.tanah.muncul .pompom {
+    top: 0;
+    height: 100%;
+}
+
+button {
+    display: block;
+    margin: auto;
+}
+
+#title-game {
+    font-size: 16px;
+    text-align: center;
+    font-family: Arial;
+    margin: 10px auto;
+}
+
+.play {
+    background: blue;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 200px;
+    color: white;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.play:hover {
+    background: red;
+}
+
+.final-score {
+    font-weight: bolder;
+}
+
+.count {
+    font-size: 16px;
+    text-align: center;
+    font-family: Arial;
+    margin: 10px auto;
+    display: none;
+}
+
+body {}

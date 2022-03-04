@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pompom Games</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1><b>Selamat Datang<br />can you find me ?</b></h1>
+
+    <div class="kotak_login">
+        <p class="tulisan_login">Silahkan login</p>
+
+        <span><?php echo isset($_GET['msg'])?$_GET['msg']:"";?></span>
+
+        <form action="php/login.php" method="POST">
+            <label>Username</label>
+            <input type="text" name="email" class="form_login" placeholder="Username atau email ..">
+
+            <label>Password</label>
+            <input type="text" name="password" class="form_login" placeholder="Password ..">
+
+            <input type="submit" class="tombol_login" value="LOGIN">
+
+            <br />
+            <br />
+            <center>
+                <a class="link" href="indeks.html">kembali</a>
+            </center>
+        </form>
+
+    </div>
+
+
+</body>
+
+</html>

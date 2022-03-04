@@ -1,0 +1,64 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POMPOM</title>
+    <link rel="stylesheet" href="pompom/css/style.css">
+</head>
+
+<body>
+    <h1>
+        <img src="pompom/img/title.png" height="100" width="400">
+    </h1>
+    <div class="playername">
+        <?php echo isset($_SESSION["name"])?$_SESSION["name"]:"Guest";?>
+    </div>
+    <button type="button" class="play" id="play" onclick="play()">Play Now</button>
+    <div class="container count" id="countdown">
+        Remaining time : <span id="count">10</span> second.
+    </div>
+    <div id="title-game">Mulai Bermain</div>
+    <span id="final-score"></span>
+    <h2 class="papan-skor" id="leaderboard">0</h2>
+
+    <div class="container">
+        <div class="tanah" id="id_1">
+            <div class="pompom" id="pompom_1" onclick="pukul('1');"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tanah" id="id_2">
+            <div class="pompom" id="pompom_2" onclick="pukul('2');"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tanah" id="id_3">
+            <div class="pompom" id="pompom_3" onclick="pukul('3');"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tanah" id="id_4">
+            <div class="pompom" id="pompom_4" onclick="pukul('4');"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tanah" id="id_5">
+            <div class="pompom" id="pompom_5" onclick="pukul('5');"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tanah" id="id_6">
+            <div class="pompom" id="pompom_6" onclick="pukul('6');"></div>
+        </div>
+    </div>
+
+
+    <script src="pompom/js/script.js?t=1"></script>
+</body>
+
+</html>

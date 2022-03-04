@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --poppins: 'Poppins';
+  --purple: #6C63FF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--purple);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.wrapper {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper .heading {
+  position: relative;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper .heading h2 {
+  font-family: var(--poppins);
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: 0.8px;
+}
+
+.wrapper .heading p {
+  font-weight: 300;
+}
+
+.wrapper .form {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper .form .field {
+  position: relative;
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  margin: 10px 0;
+  outline: none;
+  transition: 0.3s ease;
+  text-align: center;
+  background: #efefef;
+}
+
+.wrapper .form .field::placeholder {
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+.wrapper .form .button {
+  position: relative;
+  padding: 15px;
+  margin-bottom: 30px;
+  background: var(--purple);
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.wrapper .form .button:hover {
+  background: transparent;
+  border: 1px solid var(--purple);
+  color: var(--purple);
+}
+
+.wrapper .message-box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.wrapper .message-box span {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.wrapper .message-box span:last-child b {
+  color: var(--purple);
+}
+
+@media only screen and (max-width: 768px) {
+  
+  .wrapper {
+    width: 95%;
+    margin: 20px auto;
+  }
+  
+  .wrapper .heading,
+  .wrapper .form {
+    width: 80%;
+  }
+  
+}

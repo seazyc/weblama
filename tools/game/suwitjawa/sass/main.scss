@@ -1,0 +1,178 @@
+@mixin info {
+    place-self: center;
+    font-size: 0.4em;
+    text-align: center;
+    line-height: 50px;
+    width: 150px;
+    height: 50px;
+    border: 5px solid rgb(53, 49, 49);
+    border-radius: 20px;
+    background-color: white;
+}
+
+@mixin area($color: rgba(48, 48, 48, 0.6)) {
+    justify-self: center;
+    width: 80%;
+    height: 80%;
+    background-color: $color;
+    border-radius: 20px;
+}
+
+@mixin flex($direct: row) {
+    display: flex;
+    flex-direction: $direct;
+}
+
+@mixin img_hover {
+    img:hover {
+        transform: scale(1.3);
+    }
+}
+
+body {
+    background-image: url("../img/bg.png");
+    background-repeat: repeat;
+
+    .header {
+        font-size: 60px;
+        margin: 50px 0;
+
+        h1 {
+            font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: -1px -6px 5px #a3a1a6, 2px 6px 7px #82a10a, -1px 4px 0px #403b3b;
+        }
+    }
+
+    .container {
+        font-size: 60px;
+        width: 1000px;
+        background-color: rgb(95, 94, 94);
+        margin: 20px auto;
+        border-radius: 40px;
+        @include flex(column);
+
+        .content {
+            margin: 20px 0;
+            @include flex(column);
+
+            .info-game {
+                color: white;
+                font-size: 0.25em;
+                font-family: "Courier Prime", monospace, Arial, Helvetica, sans-serif;
+                margin: 20px 50px;
+            }
+
+            .area-game {
+                align-self: center;
+                margin: 20px 0;
+                width: 800px;
+                height: 600px;
+                background-image: linear-gradient(to top, #8d8787, #f5efef);
+                border-radius: 20px;
+                display: grid;
+                grid-template-areas:
+                    "area-komputer area-komputer area-komputer"
+                    "skor-player hasil skor-komputer"
+                    "area-player area-player area-player";
+                grid-template-rows: 225px 150px 225px;
+                grid-template-columns: 1fr 1fr 1fr;
+                align-content: center;
+
+                .area-komputer {
+                    grid-area: area-komputer;
+                    @include area(rgba(48, 48, 48, 0.3));
+                    margin-top: 40px;
+                    text-align: center;
+
+                    img {
+                        margin-top: 20px;
+                        width: 125px;
+                        height: 125px;
+                    }
+                }
+
+                .skor-player {
+                    grid-area: skor-player;
+                    @include info;
+                }
+
+                .hasil {
+                    grid-area: hasil;
+                    @include info;
+                }
+
+                .skor-komputer {
+                    grid-area: skor-komputer;
+                    @include info;
+                }
+
+                .area-player {
+                    grid-area: area-player;
+                    @include area(rgba(48, 48, 48, 0.6));
+
+                    ul {
+                        @include flex(row);
+                        padding-top: 20px;
+
+                        li {
+                            flex: 0.5;
+
+                            img {
+                                margin-left: 50px;
+                                width: 125px;
+                                height: 125px;
+                                transition: 0.5s;
+                            }
+
+                            .gajah,
+                            .orang,
+                            .semut {
+                                transition: 0.3s;
+                                top: 0;
+                                cursor: pointer;
+                            }
+
+                            .gajah:hover,
+                            .semut:hover,
+                            .orang:hover,
+                            .active {
+                                filter: drop-shadow(0 0 10px limegreen);
+                                transform: scale(1.25);
+                            }
+
+                            .gajah:active,
+                            .semut:active,
+                            .orang:active {
+                                top: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        margin: 50px 0 0;
+        padding: 20px;
+        background-color: rgb(43, 40, 40);
+        color: white;
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8em;
+            text-align: center;
+
+            a {
+                color: white;
+                text-decoration: white;
+            }
+
+            a:hover {
+                color: red;
+            }
+        }
+    }
+}
